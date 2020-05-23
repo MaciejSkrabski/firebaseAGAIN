@@ -1,8 +1,10 @@
 package com.example.thistimeletmeunderstandmvvm
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatDelegate
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -12,5 +14,9 @@ class MainActivity : AppCompatActivity() {
 
         AppCompatDelegate.setDefaultNightMode(
                 AppCompatDelegate.MODE_NIGHT_YES);
+
+        register.setOnClickListener {
+            startActivity(Intent(this@MainActivity, RegisterActivity::class.java ))
+        }
     }
 }

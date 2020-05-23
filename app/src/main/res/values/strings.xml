@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">FIREBASE</string>
+    <string name="password_hint">Password123</string>
+    <string name="email_hint">email@example.com</string>
+    <string name="log_in_button_text">Log in</string>
+    <string name="register_text">Don\'t have an account yet? \nRegister!</string>
+    <string name="login_text">Already have an account? \nLog in!</string>
+    <string name="register_button">Register</string>
 
 </resources>
