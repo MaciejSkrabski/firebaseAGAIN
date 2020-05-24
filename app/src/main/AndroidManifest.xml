@@ -15,9 +15,11 @@
         <activity android:name=".HomeActivity"></activity>
         <activity
             android:name=".RegisterActivity"
+            android:theme="@style/NoBar"
             android:windowSoftInputMode="stateVisible|adjustResize" />
         <activity
             android:name=".MainActivity"
+            android:theme="@style/NoBar"
             android:windowSoftInputMode="stateVisible|adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
