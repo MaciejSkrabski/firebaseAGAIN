@@ -1,14 +1,19 @@
 package com.example.thistimeletmeunderstandmvvm
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_add_book_dialog.*
 import androidx.fragment.app.viewModels
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 
 class AddBookFragment : Fragment() {
+    private val TAG = "BookFragment"
+
     private val model: BookViewModel by viewModels()
 
     override fun onCreateView(
@@ -32,6 +37,8 @@ class AddBookFragment : Fragment() {
 
 
         submit_book.setOnClickListener {
+            Log.d(TAG, "${FirebaseAuth.getInstance().currentUser}")
+            Log.d(TAG, "${FirebaseDatabase.getInstance().getReference("message")}")
             val t = add_title.text.toString().trim()
             if(t.isEmpty()){
                 add_title.error = getString(R.string.field_required)
@@ -52,6 +59,7 @@ class AddBookFragment : Fragment() {
             book.title = t
             book.author = n
             book.read = isRead
+            model.addBook(book)
 
             add_title.setText("")
             add_author.setText("")

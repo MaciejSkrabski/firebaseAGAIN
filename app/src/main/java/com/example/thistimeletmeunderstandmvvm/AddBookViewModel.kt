@@ -15,7 +15,7 @@ class BookViewModel():ViewModel(){
         get() = _result
 
     fun addBook(book: BookRow){
-        val dbBooks = FirebaseDatabase.getInstance().getReference("${FirebaseAuth.getInstance().currentUser}/books")
+        val dbBooks = FirebaseDatabase.getInstance().getReference("books")
         book.id = dbBooks.push().key
         dbBooks.child(book.id!!).setValue(book)
             .addOnCompleteListener {
