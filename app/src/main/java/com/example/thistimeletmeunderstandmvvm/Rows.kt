@@ -1,14 +1,26 @@
 package com.example.thistimeletmeunderstandmvvm
 
-class BookRow ( val title: String,
-                val author: String,
-                val read: Boolean?=false)
+import com.google.firebase.database.Exclude
 
-class FilmRow ( val title: String,
-                val director: String,
-                val watched: Boolean?=false,
-                val comment: String)
+data class BookRow (
+    @get:Exclude
+    var id: String? = null,
+    var title: String? = null,
+    var author: String? = null,
+    var read: Boolean? = null,
+    var comment: String? = null)
 
-class GameRow (val title: String,
-               val studio: String,
-               val played: Boolean?=false)
+data class FilmRow (
+    @get:Exclude
+    var String: Int? = null,
+    var title: String? = null,
+    var director: String? = null,
+    var watched: Boolean? = null
+    )
+
+data class GameRow (
+    @get:Exclude
+    var id: String? = null,
+    var title: String? = null,
+    var studio: String? = null,
+    var played: Boolean? = null)
