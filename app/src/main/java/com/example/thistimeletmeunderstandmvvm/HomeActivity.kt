@@ -2,10 +2,14 @@ package com.example.thistimeletmeunderstandmvvm
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import androidx.appcompat.app.AlertDialog
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity() {
@@ -14,13 +18,34 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-//        setSupportActionBar(materialToolbar)
+        setSupportActionBar(materialToolbar)
 
         val navController = Navigation.findNavController(this, R.id.fragment)
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
 
         bottomNavigationView.setupWithNavController(navController)
 
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.option_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        if (item?.itemId == R.id.action_logout){
+            AlertDialog.Builder(this).apply {
+                setTitle("Really?")
+                setPositiveButton("Yes") {
+                    _, _ ->
+                    FirebaseAuth.getInstance().signOut()
+                    logout()
+                }
+                setNegativeButton("No"){_, _ ->}
+            }.create().show()
+        }
+        return super.onOptionsItemSelected(item)
     }
 
 }
