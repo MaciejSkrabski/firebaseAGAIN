@@ -28,8 +28,8 @@ class RegisterActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            if ( pass.isEmpty() ) {
-                password.error = "Password shall not be empty!"
+            if ( pass.isEmpty() || pass.length < 6) {
+                password.error = "Minimum 6 characters per password!"
                 password.requestFocus()
                 return@setOnClickListener
             }
