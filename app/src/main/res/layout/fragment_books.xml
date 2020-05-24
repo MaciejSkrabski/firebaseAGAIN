@@ -3,4 +3,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BooksFragment"/>
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".BooksFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_books"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/recycler_view_books"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        style="@style/IconOnlyButton"
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:src="@drawable/ic_add_black_24dp"
+
+        android:contentDescription="add"
+        android:layout_margin="16dp" />
+
+</FrameLayout>
