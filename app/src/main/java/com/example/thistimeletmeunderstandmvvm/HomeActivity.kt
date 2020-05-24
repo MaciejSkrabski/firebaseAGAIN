@@ -27,6 +27,7 @@ class HomeActivity : AppCompatActivity() {
         setSupportActionBar(materialToolbar)
 
         database = FirebaseDatabase.getInstance()
+        //sprawdzone - działa!
         myRef=database.getReference("message")
         myRef.setValue("Hello, World!")
 
