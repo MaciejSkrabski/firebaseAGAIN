@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.util.Patterns
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import com.google.firebase.auth.FirebaseAuth
@@ -46,16 +47,39 @@ class MainActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            if ( password.isEmpty() ) {
-                passwordl.error = "Password shall not be empty!"
+            if ( password.isEmpty() || password.length < 6) {
+                passwordl.error = "Minimum 6 characters per password!"
                 passwordl.requestFocus()
                 return@setOnClickListener
             }
+
+            loginUser(mail, password)
+
         }
+    }
+
+    private fun loginUser(mail: String, password: String) {
+        progressbar.visibility = View.VISIBLE
+
+        mAuth.signInWithEmailAndPassword(mail, password)
+            .addOnCompleteListener(this) { task ->
+                progressbar.visibility = View.GONE
+                if(task.isSuccessful) {
+                    login()
+                } else {
+                    task.exception?.message?.let{
+                        toast(it)
+                    }
+                }
+            }
     }
 
     override fun onStart() {
         super.onStart()
+
+        mAuth.currentUser.let {
+            login()
+        }
 
     }
 }
