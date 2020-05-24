@@ -76,8 +76,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-
-        mAuth.currentUser.let {
+        if (mAuth.currentUser != null) {
             login()
         }
 

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/booksFragment3"
+        android:title="@string/books_label"
+        android:icon="@drawable/books_icon"
+        />
+    <item
+        android:id="@+id/moviesFragment2"
+        android:title="@string/movies_label"
+        android:icon="@drawable/movies_icon"
+        />
+    <item
+        android:id="@+id/gamesFragment2"
+        android:title="@string/games_label"
+        android:icon="@drawable/games_icon"
+        />
+</menu>

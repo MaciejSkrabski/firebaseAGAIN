@@ -71,9 +71,7 @@ class RegisterActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
 
-        mAuth.currentUser.let {
-            login()
-        }
+        if (mAuth.currentUser != null) login()
     }
 
 }
