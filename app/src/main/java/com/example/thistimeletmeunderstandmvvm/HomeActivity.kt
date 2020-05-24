@@ -10,15 +10,25 @@ import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity() {
+    lateinit var database: FirebaseDatabase
+    lateinit var myRef: DatabaseReference
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
         setSupportActionBar(materialToolbar)
+
+        database = FirebaseDatabase.getInstance()
+        myRef=database.getReference("message")
+        myRef.setValue("Hello, World!")
 
         val navController = Navigation.findNavController(this, R.id.fragment)
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
