@@ -6,7 +6,8 @@ class BookRow ( val title: String,
 
 class FilmRow ( val title: String,
                 val director: String,
-                val watched: Boolean?=false)
+                val watched: Boolean?=false,
+                val comment: String)
 
 class GameRow (val title: String,
                val studio: String,

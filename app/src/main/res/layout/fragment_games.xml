@@ -11,4 +11,15 @@
         android:layout_height="match_parent"
         android:text="Games" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        style="@style/IconOnlyButton"
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:src="@drawable/ic_add_black_24dp"
+
+        android:contentDescription="add"
+        android:layout_margin="16dp" />
+
 </FrameLayout>
