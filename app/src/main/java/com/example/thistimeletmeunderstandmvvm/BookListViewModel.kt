@@ -5,21 +5,20 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.firebase.database.*
+import java.lang.Exception
 
 class BookListViewModel : ViewModel() {
-
     val TAG = "BookListViewModel"
-
-    private val dbBooks = FirebaseDatabase.getInstance()
+    private val _result = MutableLiveData<Exception?>()
+    private val dbBooks = FirebaseDatabase.getInstance().getReference("books")
     private val _bookList: MutableLiveData<List<BookRow>> = MutableLiveData()
         val bookList: LiveData<List<BookRow>>
         get() = _bookList
 
 
     fun fetchBooks() {
-        var fetchedBooks = dbBooks.getReference("books")
         Log.d(TAG, "fetching inside booklistviewmodel")
-        fetchedBooks.addListenerForSingleValueEvent(object: ValueEventListener {
+        dbBooks.addListenerForSingleValueEvent(object: ValueEventListener {
 
             override fun onCancelled(error: DatabaseError) {Log.d(TAG, "onCancelled")}
 

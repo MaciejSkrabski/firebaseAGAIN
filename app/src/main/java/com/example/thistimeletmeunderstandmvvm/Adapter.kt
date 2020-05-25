@@ -35,8 +35,11 @@ class BooksAdapter: RecyclerView.Adapter<BooksAdapter.BooksViewHolder>(){
     }
 
     fun setbooks(newBooks:List<BookRow>){
-
+        bookList.clear()
+        bookList.addAll(newBooks)
+        notifyDataSetChanged()
     }
+
 
 
 

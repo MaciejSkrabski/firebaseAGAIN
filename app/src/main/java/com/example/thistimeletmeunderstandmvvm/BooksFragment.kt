@@ -52,7 +52,7 @@ class BooksFragment : Fragment() {
         //model.fetchBooks()
 
         model.bookList.observe(viewLifecycleOwner, Observer{
-            Log.e("MyApp","DFone")
+            Log.d("booksFragment","observer")
             bookListAdapter.setbooks(it)
             model.fetchBooks()
 

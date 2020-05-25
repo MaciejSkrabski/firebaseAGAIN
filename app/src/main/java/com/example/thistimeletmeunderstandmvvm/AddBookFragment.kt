@@ -13,6 +13,7 @@ import com.google.firebase.database.FirebaseDatabase
 
 class AddBookFragment : Fragment() {
     private val TAG = "BookFragment"
+    // dodawanie działa dobrze
 
     private val model: BookViewModel by viewModels()
 
