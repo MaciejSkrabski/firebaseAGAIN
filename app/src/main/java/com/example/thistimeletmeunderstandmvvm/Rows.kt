@@ -8,7 +8,12 @@ data class BookRow (
     var title: String? = null,
     var author: String? = null,
     var read: Boolean? = null,
-    var comment: String? = null)
+    var comment: String? = null )
+{
+    override fun equals(other: Any?): Boolean {
+
+    }
+}
 
 data class FilmRow (
     @get:Exclude
