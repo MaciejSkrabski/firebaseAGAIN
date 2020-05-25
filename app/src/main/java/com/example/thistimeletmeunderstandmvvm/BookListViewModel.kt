@@ -17,8 +17,7 @@ class BookListViewModel : ViewModel() {
 
 
     fun fetchBooks() {
-        Log.d(TAG, "fetching inside booklistviewmodel")
-        dbBooks.addValueEventListener(object: ValueEventListener {
+        dbBooks.addListenerForSingleValueEvent(object: ValueEventListener {
 
             override fun onCancelled(error: DatabaseError) {Log.d(TAG, "onCancelled")}
 

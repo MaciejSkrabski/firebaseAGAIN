@@ -18,9 +18,6 @@ import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.fragment_books.*
 
 class HomeActivity : AppCompatActivity() {
-    lateinit var database: FirebaseDatabase
-    lateinit var myRef: DatabaseReference
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,11 +25,6 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home)
 
         setSupportActionBar(materialToolbar)
-
-        database = FirebaseDatabase.getInstance()
-        //sprawdzone - działa!
-        myRef=database.getReference("message")
-        myRef.setValue("Hello, World!")
 
         val navController = Navigation.findNavController(this, R.id.fragment)
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)

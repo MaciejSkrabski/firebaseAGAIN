@@ -49,12 +49,9 @@ class BooksFragment : Fragment() {
         }
         recyclerViewBooks.addItemDecoration(DividerItemDecoration(requireContext(),LinearLayoutManager.VERTICAL))
 
-        //model.fetchBooks()
-
         model.bookList.observe(viewLifecycleOwner, Observer{
             Log.d("booksFragment","observer")
             bookListAdapter.setbooks(it)
-            model.fetchBooks()
 
 
         })

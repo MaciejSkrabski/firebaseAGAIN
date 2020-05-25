@@ -18,17 +18,14 @@ class BooksAdapter: RecyclerView.Adapter<BooksAdapter.BooksViewHolder>(){
             : BooksViewHolder {
         val inflater: LayoutInflater = LayoutInflater.from(parent.context)
         val view: View = inflater.inflate(R.layout.recycler_view_books, parent, false)
-        Log.d(TAG, "onCreateViewHolder")
         return BooksViewHolder(view)
     }
 
     override fun getItemCount(): Int {
-        Log.d(TAG, "get item count: ${bookList.size}")
         return bookList.size
     }
 
     override fun onBindViewHolder(holder: BooksViewHolder, position:Int) {
-        Log.d(TAG, "onBindViewBolder")
         holder.title.text = bookList[holder.adapterPosition].title
         holder.author.text = bookList[holder.adapterPosition].author
         holder.read.text = bookList[holder.adapterPosition].read.toString()
