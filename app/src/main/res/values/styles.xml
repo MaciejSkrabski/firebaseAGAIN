@@ -19,6 +19,11 @@
         <item name="iconGravity">textStart</item>
         <item name="backgroundTint">@color/colorPrimary</item>
     </style>
+    <style name="TrashButton" parent="Widget.MaterialComponents.Button">
+        <item name="iconPadding">0dp</item>
+        <item name="iconGravity">textStart</item>
+        <item name="backgroundTint">@color/colorTrash</item>
+    </style>
 
 
 

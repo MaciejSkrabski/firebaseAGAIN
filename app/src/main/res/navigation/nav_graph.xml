@@ -29,4 +29,9 @@
         android:name="com.example.thistimeletmeunderstandmvvm.AddBookFragment"
         android:label="fragment_add_book_dialog"
         tools:layout="@layout/fragment_add_book_dialog" />
+    <fragment
+        android:id="@+id/editRecord"
+        android:name="com.example.thistimeletmeunderstandmvvm.EditRecord"
+        android:label="fragment_edit_record"
+        tools:layout="@layout/fragment_edit_record" />
 </navigation>
