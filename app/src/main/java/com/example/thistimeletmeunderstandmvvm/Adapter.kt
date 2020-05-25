@@ -37,6 +37,12 @@ class BooksAdapter: RecyclerView.Adapter<BooksAdapter.BooksViewHolder>(){
         notifyDataSetChanged()
     }
 
+    fun addBook(book: BookRow) {
+        if(!bookList.contains(book))
+            notifyDataSetChanged()
+
+    }
+
 
 
 

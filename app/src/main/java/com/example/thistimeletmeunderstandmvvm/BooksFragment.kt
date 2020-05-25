@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
@@ -54,6 +55,11 @@ class BooksFragment : Fragment() {
             bookListAdapter.setbooks(it)
 
 
+        })
+        model.book.observe(viewLifecycleOwner, Observer{
+            Log.d("Ahyes", "It is here")
+            Toast.makeText(requireContext(), "Book fetched", Toast.LENGTH_LONG).show()
+            bookListAdapter.addBook(it)
         })
     }
 }

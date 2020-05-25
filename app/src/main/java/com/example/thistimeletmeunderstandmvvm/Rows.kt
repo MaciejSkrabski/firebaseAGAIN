@@ -11,7 +11,19 @@ data class BookRow (
     var comment: String? = null )
 {
     override fun equals(other: Any?): Boolean {
+        return if (other is BookRow){
+            other.id == id
+        } else false
 
+    }
+
+    override fun hashCode(): Int {
+        var result = id?.hashCode() ?: 0
+        result = 31 * result + (title?.hashCode() ?: 0)
+        result = 31 * result + (author?.hashCode() ?: 0)
+        result = 31 * result + (read?.hashCode() ?: 0)
+        result = 31 * result + (comment?.hashCode() ?: 0)
+        return result
     }
 }
 
