@@ -58,6 +58,7 @@ class AddBookFragment : Fragment() {
             val book = BookRow()
             book.title = t
             book.author = n
+            book.comment = c
             book.read = isRead
             model.addBook(book)
 
